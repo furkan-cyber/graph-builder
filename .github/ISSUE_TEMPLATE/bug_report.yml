@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible problem in Graph Builder
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide minimal code, inputs, and steps to reproduce the issue.
+      placeholder: |
+        1. Install package
+        2. Run this code
+        3. Observe this output
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, OS, package version, and any relevant provider/runtime details.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Logs, screenshots, stack traces, or related discussion.

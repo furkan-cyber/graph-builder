@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../graphify"
+		},
+		{
+			"path": "../agent-sdk"
+		}
+	],
+	"settings": {}
+}

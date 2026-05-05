@@ -1,0 +1,106 @@
+{
+  "name": "@cognipeer/graph-builder",
+  "version": "0.1.0",
+  "description": "API-first text graph builder for JavaScript and TypeScript applications.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.mjs",
+      "require": "./dist/node.cjs"
+    },
+    "./adapters/to-markdown": {
+      "types": "./dist/adapters/to-markdown.d.ts",
+      "import": "./dist/adapters/to-markdown.mjs",
+      "require": "./dist/adapters/to-markdown.cjs"
+    },
+    "./adapters/openai-compatible": {
+      "types": "./dist/adapters/openai-compatible.d.ts",
+      "import": "./dist/adapters/openai-compatible.mjs",
+      "require": "./dist/adapters/openai-compatible.cjs"
+    },
+    "./adapters/memory": {
+      "types": "./dist/adapters/memory.d.ts",
+      "import": "./dist/adapters/memory.mjs",
+      "require": "./dist/adapters/memory.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "prepublishOnly": "npm run test && npm run build",
+    "run:corpus": "tsx scripts/run-corpus.ts",
+    "examples:llm": "tsx examples/llm-semantic.ts",
+    "examples:llm-mock": "tsx examples/llm-mock.ts",
+    "examples:from-texts": "tsx examples/from-texts.ts",
+    "examples:provider": "tsx examples/custom-provider.ts",
+    "examples:path": "tsx examples/local-path.ts"
+  },
+  "keywords": [
+    "knowledge-graph",
+    "markdown",
+    "typescript",
+    "javascript",
+    "provider",
+    "graph",
+    "knowledge-base",
+    "semantic",
+    "llm",
+    "graph-builder",
+    "cognipeer"
+  ],
+  "author": "cognipeer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cognipeer/graph-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cognipeer/graph-builder/issues"
+  },
+  "homepage": "https://github.com/Cognipeer/graph-builder#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "ignore": "^7.0.5",
+    "mdast-util-to-string": "^4.0.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "typescript": "^5.8.3",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "vitepress": "^1.5.0",
+    "vitest": "^3.1.4"
+  }
+}
